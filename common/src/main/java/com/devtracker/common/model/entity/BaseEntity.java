@@ -1,6 +1,8 @@
 package com.devtracker.common.model.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -15,10 +17,11 @@ import java.util.UUID;
 @ToString
 public class BaseEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     @CreatedDate
     private Date createdDate;
     @LastModifiedDate
-    private Date modifiedDate;
+    private Date updatedDate;
     private boolean isDeleted;
 }

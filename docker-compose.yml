@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  user-db:
+    image: postgres:latest
+    container_name: devtracker_userdb
+    restart: always
+    environment:
+      POSTGRES_DB: devtracker_userdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password12
+    ports:
+      - "5432:5432"
+    volumes:
+      - user-db-data:/var/lib/postgresql/data
+    networks:
+      - devtracker-net
+
+volumes:
+  user-db-data:
+
+networks:
+  devtracker-net:
+    driver: bridge
