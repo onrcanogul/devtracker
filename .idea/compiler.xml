@@ -11,6 +11,7 @@
         <module name="user-service" />
         <module name="common" />
         <module name="eureka-server" />
+        <module name="tracking-service" />
       </profile>
     </annotationProcessing>
   </component>
@@ -20,6 +21,7 @@
       <module name="common" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="log-service" options="-parameters" />
+      <module name="tracking-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
   </component>
