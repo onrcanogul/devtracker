@@ -28,6 +28,12 @@ spring:
             - Path=/log/**
           filters:
             - RewritePath=/log/(?<segment>.*), /api/log/${segment}
+        - id: tracking-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/tracking/**
+          filters:
+            - RewritePath=/tracking/(?<segment>.*), /api/${segment}
 
 eureka:
   client:

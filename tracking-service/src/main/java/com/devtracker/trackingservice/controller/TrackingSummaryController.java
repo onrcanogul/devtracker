@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
-@RequestMapping("/api/daily-tracking")
+@RequestMapping("/api/tracking-summary")
 @RestController
 public class TrackingSummaryController {
     private final TrackingSummaryService service;
