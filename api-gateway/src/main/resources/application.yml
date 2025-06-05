@@ -22,6 +22,12 @@ spring:
             - Path=/auth/**
           filters:
             - RewritePath=/auth/(?<segment>.*), /api/auth/${segment}
+        - id: log-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/log/**
+          filters:
+            - RewritePath=/log/(?<segment>.*), /api/log/${segment}
 
 eureka:
   client:

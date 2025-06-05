@@ -16,8 +16,24 @@ services:
     networks:
       - devtracker-net
 
+  log-db:
+    image: postgres:latest
+    container_name: devtracker_logdb
+    restart: always
+    environment:
+      POSTGRES_DB: devtracker_logdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password12
+    ports:
+      - "5433:5432"
+    volumes:
+      - log-db-data:/var/lib/postgresql/data
+    networks:
+      - devtracker-net
+
 volumes:
   user-db-data:
+  log-db-data:
 
 networks:
   devtracker-net:
