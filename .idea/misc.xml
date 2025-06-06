@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/tracking-service/pom.xml" />
         <option value="$PROJECT_DIR$/goal-service/pom.xml" />
         <option value="$PROJECT_DIR$/insight-service/pom.xml" />
+        <option value="$PROJECT_DIR$/github-service/pom.xml" />
       </list>
     </option>
   </component>

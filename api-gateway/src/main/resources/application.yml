@@ -46,6 +46,12 @@ spring:
             - Path=/insight/**
           filters:
             - RewritePath=/insight/(?<segment>.*), /api/insight/${segment}
+        - id: github-service
+          uri: http://localhost:8086
+          predicates:
+            - Path=/github/**
+          filters:
+            - RewritePath=/github/(?<segment>.*), /api/${segment}
 
 eureka:
   client:

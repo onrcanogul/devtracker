@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eba00254-c623-4d0f-b2ae-9ba1e7f88007" name="Changes" comment="gateway was implemented">
+    <list default="true" id="eba00254-c623-4d0f-b2ae-9ba1e7f88007" name="Changes" comment="insight service was implemented">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/repository/GoalProgressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/repository/GoalProgressRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
+        <option value="Kotlin Class" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -67,6 +66,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ApiGatewayApplication.executor": "Run",
     "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.GithubServiceApplication.executor": "Run",
     "Spring Boot.GoalServiceApplication.executor": "Run",
     "Spring Boot.InsightServiceApplication.executor": "Run",
     "Spring Boot.LogServiceApplication.executor": "Run",
@@ -90,6 +90,8 @@
       <recent name="com.devtracker.apigateway" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.devtracker.githubservice.controller" />
+      <recent name="com.devtracker.githubservice.service.impl" />
       <recent name="com.devtracker.goalservice.controller" />
       <recent name="com.devtracker.trackingservice.controller" />
       <recent name="com.devtracker.common.exception" />
@@ -124,6 +126,14 @@
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="eureka-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.devtracker.eurekaserver.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GithubServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="github-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.devtracker.githubservice.GithubServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -186,7 +196,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749145178833</updated>
       <workItem from="1749145179836" duration="12388000" />
-      <workItem from="1749204048635" duration="2203000" />
+      <workItem from="1749204048635" duration="3444000" />
     </task>
     <task id="LOCAL-00001" summary="eureka service was implemented">
       <option name="closed" value="true" />
@@ -244,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749205444634</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="insight service was implemented">
+      <option name="closed" value="true" />
+      <created>1749206293858</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1749206293858</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +276,7 @@
     <MESSAGE value="gateway was updated" />
     <MESSAGE value="goal service was implemented" />
     <MESSAGE value="gateway was implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="gateway was implemented" />
+    <MESSAGE value="insight service was implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="insight service was implemented" />
   </component>
 </project>

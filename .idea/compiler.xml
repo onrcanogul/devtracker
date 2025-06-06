@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
         <module name="goal-service" />
+        <module name="github-service" />
         <module name="api-gateway" />
         <module name="log-service" />
         <module name="insight-service" />
@@ -22,6 +23,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="github-service" options="-parameters" />
       <module name="goal-service" options="-parameters" />
       <module name="insight-service" options="-parameters" />
       <module name="log-service" options="-parameters" />

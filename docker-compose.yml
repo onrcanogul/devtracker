@@ -76,12 +76,28 @@ services:
     networks:
       - devtracker-net
 
+  github-db:
+    image: postgres:latest
+    container_name: devtracker_githubdb
+    restart: always
+    environment:
+      POSTGRES_DB: devtracker_githubdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password12
+    ports:
+      - "5437:5432"
+    volumes:
+      - github-db-data:/var/lib/postgresql/data
+    networks:
+      - devtracker-net
+
 volumes:
   user-db-data:
   log-db-data:
   tracking-db-data:
   goal-db-data:
   insight-db-data:
+  github-db-data:
 
 networks:
   devtracker-net:
