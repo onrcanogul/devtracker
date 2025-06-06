@@ -40,6 +40,12 @@ spring:
             - Path=/goal/**
           filters:
             - RewritePath=/goal/(?<segment>.*), /api/${segment}
+        - id: insight-service
+          uri: http://localhost:8085
+          predicates:
+            - Path=/insight/**
+          filters:
+            - RewritePath=/insight/(?<segment>.*), /api/insight/${segment}
 
 eureka:
   client:

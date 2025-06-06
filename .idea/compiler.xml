@@ -10,6 +10,7 @@
         <module name="goal-service" />
         <module name="api-gateway" />
         <module name="log-service" />
+        <module name="insight-service" />
         <module name="user-service" />
         <module name="eureka-server" />
         <module name="tracking-service" />
@@ -22,6 +23,7 @@
       <module name="common" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="goal-service" options="-parameters" />
+      <module name="insight-service" options="-parameters" />
       <module name="log-service" options="-parameters" />
       <module name="tracking-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
