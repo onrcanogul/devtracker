@@ -46,10 +46,26 @@ services:
     networks:
       - devtracker-net
 
+  goal-db:
+    image: postgres:latest
+    container_name: devtracker_goaldb
+    restart: always
+    environment:
+      POSTGRES_DB: devtracker_goaldb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password12
+    ports:
+      - "5435:5432"
+    volumes:
+      - goal-db-data:/var/lib/postgresql/data
+    networks:
+      - devtracker-net
+
 volumes:
   user-db-data:
   log-db-data:
   tracking-db-data:
+  goal-db-data:
 
 networks:
   devtracker-net:

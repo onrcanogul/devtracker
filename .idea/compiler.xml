@@ -6,10 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="common" />
+        <module name="goal-service" />
         <module name="api-gateway" />
         <module name="log-service" />
         <module name="user-service" />
-        <module name="common" />
         <module name="eureka-server" />
         <module name="tracking-service" />
       </profile>
@@ -20,6 +21,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="goal-service" options="-parameters" />
       <module name="log-service" options="-parameters" />
       <module name="tracking-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
