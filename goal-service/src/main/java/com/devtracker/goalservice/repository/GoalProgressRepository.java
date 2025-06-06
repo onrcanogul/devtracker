@@ -1,0 +1,10 @@
+package com.devtracker.goalservice.repository;
+
+import com.devtracker.common.repository.BaseRepository;
+import com.devtracker.goalservice.entity.Goal;
+import com.devtracker.goalservice.entity.GoalProgress;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface GoalProgressRepository extends BaseRepository<GoalProgress> {
+}
