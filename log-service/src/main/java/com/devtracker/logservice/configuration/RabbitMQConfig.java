@@ -35,19 +35,44 @@ public class RabbitMQConfig {
                 .build());
         return factory;
     }
+    // ---------- Commit ----------
     @Bean
     public TopicExchange commitExchange() {
         return new TopicExchange(RabbitMQConstants.COMMIT_EXCHANGE);
     }
+
     @Bean
     public Queue commitCreatedQueue() {
-        Map<String, Object> args = new HashMap<>();
-        args.put("x-dead-letter-exchange", RabbitMQConstants.DLQ_EXCHANGE);
-        args.put("x-dead-letter-routing-key", RabbitMQConstants.DLQ_ROUTING_KEY);
-        return new Queue(RabbitMQConstants.COMMIT_QUEUE, true, false, true, args);
+        return buildDurableQueue(RabbitMQConstants.COMMIT_QUEUE);
     }
+
     @Bean
     public Binding commitCreateBinding(Queue commitCreatedQueue, TopicExchange commitExchange) {
         return BindingBuilder.bind(commitCreatedQueue).to(commitExchange).with(RabbitMQConstants.COMMIT_CREATED_ROUTING_KEY);
     }
+
+    // ---------- Log ----------
+    @Bean
+    public TopicExchange logExchange() {
+        return new TopicExchange(RabbitMQConstants.LOG_EXCHANGE);
+    }
+
+    @Bean
+    public Queue logCreatedQueue() {
+        return buildDurableQueue(RabbitMQConstants.LOG_QUEUE);
+    }
+
+    @Bean
+    public Binding logCreateBinding(Queue logCreatedQueue, TopicExchange logExchange) {
+        return BindingBuilder.bind(logCreatedQueue).to(logExchange).with(RabbitMQConstants.LOG_CREATED_ROUTING_KEY);
+    }
+
+    // ---------- Helper ----------
+    private Queue buildDurableQueue(String queueName) {
+        Map<String, Object> args = new HashMap<>();
+        args.put("x-dead-letter-exchange", RabbitMQConstants.DLQ_EXCHANGE);
+        args.put("x-dead-letter-routing-key", RabbitMQConstants.DLQ_ROUTING_KEY);
+        return new Queue(queueName, true, false, true, args);
+    }
+
 }

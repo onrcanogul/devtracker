@@ -12,4 +12,5 @@ public class BaseDto {
     private UUID id;
     private Date createdDate;
     private Date updatedDate;
+    private boolean isDeleted;
 }
