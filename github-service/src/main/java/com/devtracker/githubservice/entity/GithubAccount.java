@@ -7,13 +7,14 @@ import lombok.Setter;
 
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Getter
 @Setter
 @Entity
 public class GithubAccount extends BaseEntity {
 
-    private Long userId;
+    private UUID userId;
 
     private LocalDate connectedDate;
 
