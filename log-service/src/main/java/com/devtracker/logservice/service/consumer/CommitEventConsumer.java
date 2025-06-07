@@ -5,6 +5,7 @@ import com.devtracker.common.event.CommitCreatedEvent;
 import com.devtracker.common.util.ServiceResponse;
 import com.devtracker.logservice.dto.LogDto;
 import com.devtracker.logservice.service.LogService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
@@ -29,9 +30,8 @@ public class CommitEventConsumer {
         this.service = service;
     }
 
-    // handle events
     @RabbitHandler
-    public void handleCommitCreated(CommitCreatedEvent event, Channel channel, Message message) {
+    public void handleCommitCreated(CommitCreatedEvent event, Channel channel, Message message) throws JsonProcessingException {
         String correlationId = (String)message.getMessageProperties().getHeaders().get("correlationId");
         log.info("Correlation Id: {}. Commit event received for userId: {}", correlationId, event.getUserId());
         ServiceResponse<LogDto> response = service.create(getCreateModel(event));

@@ -16,8 +16,8 @@ public class EventPublisherImpl implements EventPublisher {
 
     public void publishLogCreatedEvent(LogCreatedEvent event) {
         rabbitTemplate.convertAndSend(
-                RabbitMQConstants.COMMIT_EXCHANGE,
-                RabbitMQConstants.COMMIT_CREATED_ROUTING_KEY,
+                RabbitMQConstants.LOG_EXCHANGE,
+                RabbitMQConstants.LOG_CREATED_ROUTING_KEY,
                 event);
     }
 }

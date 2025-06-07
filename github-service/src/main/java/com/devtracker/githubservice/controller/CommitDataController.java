@@ -4,6 +4,7 @@ import com.devtracker.common.util.NoContent;
 import com.devtracker.common.util.ServiceResponse;
 import com.devtracker.githubservice.dto.CommitDataDto;
 import com.devtracker.githubservice.service.CommitDataService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +33,7 @@ public class CommitDataController {
     }
 
     @PostMapping("create")
-    public ResponseEntity<ServiceResponse<CommitDataDto>> create(@RequestBody CommitDataDto model) {
+    public ResponseEntity<ServiceResponse<CommitDataDto>> create(@RequestBody CommitDataDto model) throws JsonProcessingException {
         ServiceResponse<CommitDataDto> response = service.create(model);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }

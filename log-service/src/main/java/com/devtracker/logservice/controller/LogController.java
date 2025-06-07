@@ -4,6 +4,7 @@ import com.devtracker.common.util.NoContent;
 import com.devtracker.common.util.ServiceResponse;
 import com.devtracker.logservice.dto.LogDto;
 import com.devtracker.logservice.service.LogService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,7 +34,7 @@ public class LogController {
     }
 
     @PostMapping("create")
-    public ResponseEntity<ServiceResponse<LogDto>> create(@RequestBody LogDto model) {
+    public ResponseEntity<ServiceResponse<LogDto>> create(@RequestBody LogDto model) throws JsonProcessingException {
         ServiceResponse<LogDto> response = service.create(model);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }

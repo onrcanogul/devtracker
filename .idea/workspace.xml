@@ -4,17 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eba00254-c623-4d0f-b2ae-9ba1e7f88007" name="Changes" comment="retry ignore">
+    <list default="true" id="eba00254-c623-4d0f-b2ae-9ba1e7f88007" name="Changes" comment="consumer project structure">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/event/AnalyzeCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/event/AnalyzeCreatedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/event/CommitCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/event/CommitCreatedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/event/GoalProgressEvaluationEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/event/GoalProgressEvaluationEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/event/LogCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/event/LogCreatedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/handler/RabbitListenerErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/handler/RabbitListenerErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/service/BaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/service/BaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/service/impl/BaseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/service/impl/BaseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/github-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/github-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/GithubServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/GithubServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/configuration/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/configuration/RabbitMQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/controller/CommitDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/controller/CommitDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/controller/GithubAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/controller/GithubAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/entity/OutboxEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/entity/OutboxEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/service/impl/CommitDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/service/impl/CommitDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/service/impl/EventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/service/impl/EventPublisherImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/dto/GoalDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/dto/GoalDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/dto/GoalProgressDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/dto/GoalProgressDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/entity/Goal.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/entity/Goal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/entity/GoalProgress.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/entity/GoalProgress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/CommitEventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/consumer/CommitEventConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/EventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/EventPublisherImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/service/job/OutboxPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/service/job/OutboxPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/controller/GoalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/controller/GoalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/controller/GoalProgressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/controller/GoalProgressController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/InsightServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/InsightServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/configuration/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/configuration/RabbitMQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/controller/InsightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/controller/InsightController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/entity/OutboxEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/entity/OutboxEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/EventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/EventPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/InsightService.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/InsightService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/consumer/LogEventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/consumer/LogEventConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/impl/EventPublisherImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/impl/EventPublisherImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/impl/InsightServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/impl/InsightServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/job/OutboxPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/job/OutboxPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/LogServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/LogServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/controller/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/controller/LogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/entity/OutboxEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/entity/OutboxEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/LogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/consumer/CommitEventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/consumer/CommitEventConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/EventPublisherImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/EventPublisherImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/LogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/LogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/job/OutboxPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/job/OutboxPublisher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +57,8 @@
         <option value="AnnotationType" />
         <option value="Kotlin Class" />
         <option value="package-info" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -72,25 +102,26 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ApiGatewayApplication.executor": "Run",
     "Spring Boot.EurekaServerApplication.executor": "Run",
-    "Spring Boot.GithubServiceApplication.executor": "Run",
-    "Spring Boot.GoalServiceApplication.executor": "Run",
-    "Spring Boot.InsightServiceApplication.executor": "Run",
+    "Spring Boot.GithubServiceApplication.executor": "Debug",
+    "Spring Boot.GoalServiceApplication.executor": "Debug",
+    "Spring Boot.InsightServiceApplication.executor": "Debug",
     "Spring Boot.LogServiceApplication.executor": "Debug",
     "Spring Boot.TrackingServiceApplication.executor": "Run",
     "Spring Boot.UserServiceApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/onurcanogul/Desktop/devtracker/log-service/src/main/java/com/devtracker/logservice/service",
+    "last_opened_file_path": "/Users/onurcanogul/Desktop/devtracker/tracking-service/src/main/java/com/devtracker/trackingservice",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -99,18 +130,18 @@
       <recent name="com.devtracker.apigateway" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service" />
-      <recent name="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice" />
+      <recent name="$PROJECT_DIR$/tracking-service/src/main/java/com/devtracker/trackingservice" />
       <recent name="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice" />
-      <recent name="$PROJECT_DIR$/common/src/main/java/com/devtracker/common" />
+      <recent name="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice" />
       <recent name="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice" />
+      <recent name="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.devtracker.common.configuration" />
+      <recent name="com.devtracker.insightservice.service.job" />
+      <recent name="com.devtracker.insightservice.repository" />
+      <recent name="com.devtracker.insightservice.entity" />
       <recent name="com.devtracker.logservice.repository" />
-      <recent name="com.devtracker.logservice.entity" />
-      <recent name="com.devtracker.insightservice.service.impl" />
-      <recent name="com.devtracker.githubservice.controller" />
-      <recent name="com.devtracker.githubservice.service.impl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -123,7 +154,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
+  <component name="RunManager" selected="Spring Boot.InsightServiceApplication">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.devtracker.apigateway.ApiGatewayApplication" />
@@ -163,6 +194,8 @@
       </method>
     </configuration>
     <configuration name="InsightServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="insight-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.devtracker.insightservice.InsightServiceApplication" />
@@ -194,6 +227,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      <item itemvalue="Spring Boot.CommonApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.GithubServiceApplication" />
+      <item itemvalue="Spring Boot.GoalServiceApplication" />
+      <item itemvalue="Spring Boot.InsightServiceApplication" />
+      <item itemvalue="Spring Boot.LogServiceApplication" />
+      <item itemvalue="Spring Boot.TrackingServiceApplication" />
+      <item itemvalue="Spring Boot.UserServiceApplication" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -216,7 +260,7 @@
       <workItem from="1749223645230" duration="5292000" />
       <workItem from="1749230857501" duration="715000" />
       <workItem from="1749247657008" duration="1776000" />
-      <workItem from="1749283443185" duration="11812000" />
+      <workItem from="1749283443185" duration="22275000" />
     </task>
     <task id="LOCAL-00001" summary="eureka service was implemented">
       <option name="closed" value="true" />
@@ -338,7 +382,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749304975851</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="outbox patterns have been implemented">
+      <option name="closed" value="true" />
+      <created>1749308294572</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1749308294572</updated>
+    </task>
+    <task id="LOCAL-00017" summary="consumer project structure">
+      <option name="closed" value="true" />
+      <created>1749308541764</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1749308541764</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,6 +419,49 @@
     <MESSAGE value="RabbitListener error handler was implemented" />
     <MESSAGE value="Goal Progress Evaluation event was handled" />
     <MESSAGE value="retry ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="retry ignore" />
+    <MESSAGE value="outbox patterns have been implemented" />
+    <MESSAGE value="consumer project structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="consumer project structure" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/service/consumer/LogEventConsumer.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tracking-service/src/main/java/com/devtracker/trackingservice/service/consumer/LogEventConsumer.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/job/OutboxPublisher.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/service/job/OutboxPublisher.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/LogServiceImpl.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/consumer/CommitEventConsumer.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/consumer/LogEventConsumer.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

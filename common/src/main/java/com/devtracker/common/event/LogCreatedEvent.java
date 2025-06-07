@@ -10,6 +10,9 @@ import java.util.UUID;
 
 @Builder
 @Getter @Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class LogCreatedEvent extends BaseEvent {
     private UUID id;
     private Date createdDate;

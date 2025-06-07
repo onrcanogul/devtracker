@@ -7,7 +7,10 @@ import com.devtracker.common.mapper.Mapper;
 import com.devtracker.common.util.ServiceResponse;
 import com.devtracker.insightservice.dto.InsightDto;
 import com.devtracker.insightservice.entity.Insight;
+import com.devtracker.insightservice.service.EventPublisher;
 import com.devtracker.insightservice.service.InsightService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
@@ -15,7 +18,6 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 
-import java.nio.channels.Channel;
 
 @Slf4j
 @Component
@@ -25,18 +27,18 @@ import java.nio.channels.Channel;
         containerFactory = "rabbitListenerContainerFactory"
 )
 public class LogEventConsumer {
-    private final RabbitTemplate rabbitTemplate;
     private final InsightService insightService;
     private final Mapper<Insight, InsightDto> mapper;
+    private final EventPublisher eventPublisher;
 
-    public LogEventConsumer(RabbitTemplate rabbitTemplate, InsightService insightService, Mapper<Insight, InsightDto> mapper) {
-        this.rabbitTemplate = rabbitTemplate;
+    public LogEventConsumer(InsightService insightService, Mapper<Insight, InsightDto> mapper, EventPublisher eventPublisher) {
         this.insightService = insightService;
         this.mapper = mapper;
+        this.eventPublisher = eventPublisher;
     }
 
     @RabbitHandler
-    public void handleLogCreatedEvent(LogCreatedEvent event, Channel channel, Message message) {
+    public void handleLogCreatedEvent(LogCreatedEvent event, Channel channel, Message message) throws JsonProcessingException {
         String correlationId = (String)message.getMessageProperties().getHeaders().get("correlationId");
         log.info("Correlation Id: {} Handle log created event triggered", correlationId);
 
@@ -45,8 +47,7 @@ public class LogEventConsumer {
 
         insightService.create(mapper.toDto(response.getData()));
         log.info("Correlation Id: {} Insight was created", correlationId);
-
-        rabbitTemplate.convertAndSend(RabbitMQConstants.LOG_EXCHANGE, RabbitMQConstants.LOG_GOAL_PROGRESS_EVALUATION_ROUTING_KEY, getProgressEvent(event, response.getData()));
+        eventPublisher.publishGoalProcessEvaluationEvent(getProgressEvent(event, response.getData()));
         log.info("Correlation Id: {} Send Goal Progress Event to Goal", correlationId);
     }
 

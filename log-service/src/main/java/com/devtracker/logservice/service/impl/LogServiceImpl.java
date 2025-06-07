@@ -12,6 +12,7 @@ import com.devtracker.logservice.repository.OutboxRepository;
 import com.devtracker.logservice.service.LogService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -22,28 +23,28 @@ public class LogServiceImpl extends BaseServiceImpl<Log, LogDto> implements LogS
 
     private final LogRepository repository;
     private final Mapper<Log, LogDto> mapper;
-    private final EventPublisherImpl eventPublisherImpl;
+    private final ObjectMapper objectMapper;
     private final OutboxRepository outboxRepository;
     public LogServiceImpl(
             LogRepository repository,
-            Mapper<Log, LogDto> mapper, EventPublisherImpl eventPublisherImpl, OutboxRepository outboxRepository
+            Mapper<Log, LogDto> mapper, ObjectMapper objectMapper, OutboxRepository outboxRepository
     ) {
         super(repository, mapper);
         this.repository = repository;
         this.mapper = mapper;
-        this.eventPublisherImpl = eventPublisherImpl;
+        this.objectMapper = objectMapper;
         this.outboxRepository = outboxRepository;
     }
 
+    @Override
     @Transactional
-    public ServiceResponse<LogDto> create(LogDto dto) {
+    public ServiceResponse<LogDto> create(LogDto dto) throws JsonProcessingException {
         Log model = mapper.toEntity(dto);
         Log saved = repository.save(model);
         LogCreatedEvent event = getCreatedEvent(saved);
         OutboxEvent outboxEvent = new OutboxEvent();
-        outboxEvent.setId(event.getId());
         outboxEvent.setAggregateType("LogCreated");
-        outboxEvent.setPayload(serializeEvent(event));
+        outboxEvent.setPayload(objectMapper.writeValueAsString(event));
         outboxEvent.setType(event.getClass().getTypeName());
         outboxRepository.save(outboxEvent);
         return ServiceResponse.success(mapper.toDto(saved), 201);
@@ -61,14 +62,7 @@ public class LogServiceImpl extends BaseServiceImpl<Log, LogDto> implements LogS
         entity.setRepositoryName(dto.getRepositoryName());
     }
 
-    private String serializeEvent(Object event) {
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            return mapper.writeValueAsString(event);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException("Event serialization failed", e);
-        }
-    }
+
 
     private LogCreatedEvent getCreatedEvent(Log dto) {
         return LogCreatedEvent.builder()

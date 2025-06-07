@@ -8,6 +8,7 @@ import com.devtracker.common.repository.BaseRepository;
 import com.devtracker.common.service.BaseService;
 import com.devtracker.common.util.NoContent;
 import com.devtracker.common.util.ServiceResponse;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,7 +32,7 @@ public abstract class BaseServiceImpl<T extends BaseEntity, D extends BaseDto> i
         return ServiceResponse.success(mapper.toDto(repository.findById(id).orElseThrow(() -> new NotFoundException("Not Found"))), 200);
     }
 
-    public ServiceResponse<D> create(D dto) {
+    public ServiceResponse<D> create(D dto) throws JsonProcessingException {
         T entity = mapper.toEntity(dto);
         T newEntity = repository.save(entity);
         return ServiceResponse.success(mapper.toDto(newEntity), 201);

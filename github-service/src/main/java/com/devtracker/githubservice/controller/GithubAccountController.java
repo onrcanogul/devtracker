@@ -4,6 +4,7 @@ import com.devtracker.common.util.NoContent;
 import com.devtracker.common.util.ServiceResponse;
 import com.devtracker.githubservice.dto.GithubAccountDto;
 import com.devtracker.githubservice.service.GithubAccountService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +33,7 @@ public class GithubAccountController {
     }
 
     @PostMapping("create")
-    public ResponseEntity<ServiceResponse<GithubAccountDto>> create(@RequestBody GithubAccountDto model) {
+    public ResponseEntity<ServiceResponse<GithubAccountDto>> create(@RequestBody GithubAccountDto model) throws JsonProcessingException {
         ServiceResponse<GithubAccountDto> response = service.create(model);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }

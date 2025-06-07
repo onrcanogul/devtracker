@@ -17,10 +17,12 @@ import java.util.List;
 public class OutboxPublisher {
     private final OutboxRepository repository;
     private final EventPublisher eventPublisherImpl;
+    private final ObjectMapper objectMapper;
 
-    public OutboxPublisher(OutboxRepository repository, EventPublisher eventPublisherImpl) {
+    public OutboxPublisher(OutboxRepository repository, EventPublisher eventPublisherImpl, ObjectMapper objectMapper) {
         this.repository = repository;
         this.eventPublisherImpl = eventPublisherImpl;
+        this.objectMapper = objectMapper;
     }
 
     @Scheduled(fixedRate = 5000)
@@ -28,7 +30,7 @@ public class OutboxPublisher {
         List<OutboxEvent> outboxes = repository.findByPublishedFalse();
         outboxes.forEach(outbox -> {
             try {
-                eventPublisherImpl.publishLogCreatedEvent(new ObjectMapper().readValue(outbox.getPayload(), LogCreatedEvent.class));
+                eventPublisherImpl.publishLogCreatedEvent(objectMapper.readValue(outbox.getPayload(), LogCreatedEvent.class));
                 outbox.setPublished(true);
                 repository.save(outbox);
             } catch (JsonProcessingException e) {

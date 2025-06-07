@@ -11,6 +11,8 @@ import com.devtracker.githubservice.repository.CommitDataRepository;
 import com.devtracker.githubservice.repository.OutboxRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -19,19 +21,21 @@ public class CommitDataService extends BaseServiceImpl<CommitData, CommitDataDto
     private final CommitDataRepository repository;
     private final OutboxRepository outboxRepository;
     private final Mapper<CommitData, CommitDataDto> mapper;
+    private final ObjectMapper objectMapper;
     private final EventPublisherImpl eventPublisherImpl;
     public CommitDataService(
             CommitDataRepository repository, OutboxRepository outboxRepository,
-            Mapper<CommitData, CommitDataDto> mapper, EventPublisherImpl eventPublisherImpl) {
+            Mapper<CommitData, CommitDataDto> mapper, ObjectMapper objectMapper, EventPublisherImpl eventPublisherImpl) {
         super(repository, mapper);
         this.outboxRepository = outboxRepository;
         this.mapper = mapper;
         this.repository = repository;
+        this.objectMapper = objectMapper;
         this.eventPublisherImpl = eventPublisherImpl;
     }
 
     @Transactional
-    public ServiceResponse<CommitDataDto> create(CommitDataDto model) {
+    public ServiceResponse<CommitDataDto> create(CommitDataDto model) throws JsonProcessingException {
         CommitData data = mapper.toEntity(model);
         CommitData saved = repository.save(data);
 
@@ -39,7 +43,7 @@ public class CommitDataService extends BaseServiceImpl<CommitData, CommitDataDto
         CommitCreatedEvent event = getCreatedEvent(saved);
         outboxEvent.setAggregateId(saved.getId().toString());
         outboxEvent.setAggregateType("CommitData");
-        outboxEvent.setPayload(serializeEvent(event));
+        outboxEvent.setPayload(objectMapper.writeValueAsString(event));
         outboxEvent.setType(event.getClass().getTypeName());
         outboxRepository.save(outboxEvent);
         return ServiceResponse.success(mapper.toDto(saved), 201);
@@ -59,14 +63,6 @@ public class CommitDataService extends BaseServiceImpl<CommitData, CommitDataDto
         entity.setHasPullRequest(dto.isHasPullRequest());
     }
 
-    private String serializeEvent(Object event) {
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            return mapper.writeValueAsString(event);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException("Event serialization failed", e);
-        }
-    }
 
     private CommitCreatedEvent getCreatedEvent(CommitData saved) {
         return CommitCreatedEvent.builder()

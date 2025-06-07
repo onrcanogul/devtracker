@@ -4,6 +4,7 @@ import com.devtracker.common.util.NoContent;
 import com.devtracker.common.util.ServiceResponse;
 import com.devtracker.insightservice.dto.InsightDto;
 import com.devtracker.insightservice.service.InsightService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +33,7 @@ public class InsightController {
     }
 
     @PostMapping("create")
-    public ResponseEntity<ServiceResponse<InsightDto>> create(@RequestBody InsightDto model) {
+    public ResponseEntity<ServiceResponse<InsightDto>> create(@RequestBody InsightDto model) throws JsonProcessingException {
         ServiceResponse<InsightDto> response = service.create(model);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }

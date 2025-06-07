@@ -6,6 +6,7 @@ import com.devtracker.goalservice.dto.GoalDto;
 import com.devtracker.goalservice.dto.GoalProgressDto;
 import com.devtracker.goalservice.service.GoalProgressService;
 import com.devtracker.goalservice.service.GoalService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,7 +35,7 @@ public class GoalProgressController {
     }
 
     @PostMapping("create")
-    public ResponseEntity<ServiceResponse<GoalProgressDto>> create(@RequestBody GoalProgressDto model) {
+    public ResponseEntity<ServiceResponse<GoalProgressDto>> create(@RequestBody GoalProgressDto model) throws JsonProcessingException {
         ServiceResponse<GoalProgressDto> response = service.create(model);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }

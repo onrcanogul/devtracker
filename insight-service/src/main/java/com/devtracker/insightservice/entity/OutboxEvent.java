@@ -1,7 +1,6 @@
 package com.devtracker.insightservice.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,11 +11,13 @@ import java.util.UUID;
 @Getter @Setter
 public class OutboxEvent {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String aggregateType;
     private String aggregateId;
 
     private String type;
+    @Column(columnDefinition = "TEXT")
     private String payload;
 
     private boolean published = false;
