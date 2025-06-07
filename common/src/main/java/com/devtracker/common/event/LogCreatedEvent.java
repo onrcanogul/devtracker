@@ -1,7 +1,7 @@
 package com.devtracker.common.event;
 
 
-import lombok.Builder;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.UUID;
 
 @Builder
-public class LogCreatedEvent {
+@Getter @Setter
+public class LogCreatedEvent extends BaseEvent {
     private UUID id;
     private Date createdDate;
     private Date updatedDate;

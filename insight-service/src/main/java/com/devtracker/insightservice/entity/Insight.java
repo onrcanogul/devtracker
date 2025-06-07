@@ -7,17 +7,20 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
 @Entity
 public class Insight extends BaseEntity {
 
-    private Long userId;
+    private UUID userId;
 
-    private String topTags;
+    @ElementCollection
+    private List<String> topTags;
 
-    private String weakTags;
+    @ElementCollection
+    private List<String> weakTags;
 
     private String activityPattern;
 

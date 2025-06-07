@@ -1,7 +1,6 @@
 package com.devtracker.goalservice.service.impl;
 
 import com.devtracker.common.mapper.Mapper;
-import com.devtracker.common.repository.BaseRepository;
 import com.devtracker.common.service.impl.BaseServiceImpl;
 import com.devtracker.goalservice.dto.GoalDto;
 import com.devtracker.goalservice.entity.Goal;

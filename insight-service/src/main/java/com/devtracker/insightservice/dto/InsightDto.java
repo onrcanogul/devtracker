@@ -5,15 +5,16 @@ import com.devtracker.common.model.dto.BaseDto;
 import lombok.Data;
 
 import java.util.List;
+import java.util.UUID;
 
 @Data
 public class InsightDto extends BaseDto {
 
-    private Long userId;
+    private UUID userId;
 
-    private String topTags;
+    private List<String> topTags;
 
-    private String weakTags;
+    private List<String> weakTags;
 
     private String activityPattern;
 

@@ -1,4 +1,4 @@
-package com.devtracker.logservice.configuration;
+package com.devtracker.goalservice.configuration;
 
 import com.devtracker.common.configuration.RabbitConfigurer;
 import com.devtracker.common.constant.RabbitMQConstants;

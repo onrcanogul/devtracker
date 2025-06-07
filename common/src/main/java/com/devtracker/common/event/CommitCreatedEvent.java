@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Data
 @Builder
-public class CommitCreatedEvent {
+public class CommitCreatedEvent extends BaseEvent {
 
     private UUID id;
 

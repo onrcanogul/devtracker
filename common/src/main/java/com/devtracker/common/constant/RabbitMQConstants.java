@@ -15,4 +15,11 @@ public class RabbitMQConstants {
     public static final String LOG_QUEUE = "q.log";
     public static final String LOG_EXCHANGE = "ex.log";
     public static final String LOG_CREATED_ROUTING_KEY = "routing-key.log-create";
+    public static final String LOG_GOAL_PROGRESS_EVALUATION_ROUTING_KEY = "routing-key.goal-progress-evaluation";
+
+    //Insight Events
+    public static final String INSIGHT_QUEUE = "q.insight";
+    public static final String INSIGHT_EXCHANGE = "ex.insight";
+    public static final String INSIGHT_ANALYZE_CREATED_ROUTING_KEY = "routing-key.analyze-created";
+
 }
