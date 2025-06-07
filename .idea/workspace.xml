@@ -4,22 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eba00254-c623-4d0f-b2ae-9ba1e7f88007" name="Changes" comment="RabbitListener error handler was implemented">
+    <list default="true" id="eba00254-c623-4d0f-b2ae-9ba1e7f88007" name="Changes" comment="retry ignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/constant/RabbitMQConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/constant/RabbitMQConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/event/CommitCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/event/CommitCreatedEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/event/LogCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/event/LogCreatedEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goal-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/configuration/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/configuration/RabbitMQConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/messaging/MetadataHeaderProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/messaging/MetadataHeaderProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/repository/GoalProgressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/repository/GoalProgressRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/service/GoalProgressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/service/GoalProgressService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/service/impl/GoalProgressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/service/impl/GoalProgressServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/service/impl/GoalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/service/impl/GoalServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/impl/InsightServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/impl/InsightServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/impl/LogEventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/impl/LogEventConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/configuration/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/configuration/RabbitMQConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracking-service/src/main/java/com/devtracker/trackingservice/service/impl/LogEventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/java/com/devtracker/trackingservice/service/impl/LogEventConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/service/impl/CommitDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/service/impl/CommitDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/service/impl/EventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/github-service/src/main/java/com/devtracker/githubservice/service/impl/EventPublisherImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/dto/GoalDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/dto/GoalDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/dto/GoalProgressDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/dto/GoalProgressDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/entity/Goal.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/entity/Goal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/entity/GoalProgress.java" beforeDir="false" afterPath="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice/entity/GoalProgress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/CommitEventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/consumer/CommitEventConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/EventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/EventPublisherImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/LogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/LogServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +27,8 @@
         <option value="AnnotationType" />
         <option value="Kotlin Class" />
         <option value="package-info" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -86,7 +81,7 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/onurcanogul/Desktop/devtracker/goal-service/src/main/java/com/devtracker/goalservice",
+    "last_opened_file_path": "/Users/onurcanogul/Desktop/devtracker/log-service/src/main/java/com/devtracker/logservice/service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -104,17 +99,18 @@
       <recent name="com.devtracker.apigateway" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service" />
       <recent name="$PROJECT_DIR$/goal-service/src/main/java/com/devtracker/goalservice" />
       <recent name="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice" />
       <recent name="$PROJECT_DIR$/common/src/main/java/com/devtracker/common" />
       <recent name="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.devtracker.logservice.repository" />
+      <recent name="com.devtracker.logservice.entity" />
       <recent name="com.devtracker.insightservice.service.impl" />
       <recent name="com.devtracker.githubservice.controller" />
       <recent name="com.devtracker.githubservice.service.impl" />
-      <recent name="com.devtracker.goalservice.controller" />
-      <recent name="com.devtracker.trackingservice.controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -220,7 +216,7 @@
       <workItem from="1749223645230" duration="5292000" />
       <workItem from="1749230857501" duration="715000" />
       <workItem from="1749247657008" duration="1776000" />
-      <workItem from="1749283443185" duration="6591000" />
+      <workItem from="1749283443185" duration="11812000" />
     </task>
     <task id="LOCAL-00001" summary="eureka service was implemented">
       <option name="closed" value="true" />
@@ -326,7 +322,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749285609153</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Goal Progress Evaluation event was handled">
+      <option name="closed" value="true" />
+      <created>1749290382863</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1749290382863</updated>
+    </task>
+    <task id="LOCAL-00015" summary="retry ignore">
+      <option name="closed" value="true" />
+      <created>1749304975851</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1749304975851</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,6 +357,8 @@
     <MESSAGE value="Create Commit event was handled" />
     <MESSAGE value="Log Created Event was published and consumed" />
     <MESSAGE value="RabbitListener error handler was implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="RabbitListener error handler was implemented" />
+    <MESSAGE value="Goal Progress Evaluation event was handled" />
+    <MESSAGE value="retry ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="retry ignore" />
   </component>
 </project>

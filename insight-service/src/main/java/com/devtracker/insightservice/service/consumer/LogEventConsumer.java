@@ -1,9 +1,8 @@
-package com.devtracker.insightservice.service.impl;
+package com.devtracker.insightservice.service.consumer;
 
 import com.devtracker.common.constant.RabbitMQConstants;
 import com.devtracker.common.event.GoalProgressEvaluationEvent;
 import com.devtracker.common.event.LogCreatedEvent;
-import com.devtracker.common.exception.NotFoundException;
 import com.devtracker.common.mapper.Mapper;
 import com.devtracker.common.util.ServiceResponse;
 import com.devtracker.insightservice.dto.InsightDto;

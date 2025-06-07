@@ -12,13 +12,14 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Set;
+import java.util.UUID;
 
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
 @Entity
 public class Goal extends BaseEntity {
 
-    private Long userId;
+    private UUID userId;
 
     private String description;
 

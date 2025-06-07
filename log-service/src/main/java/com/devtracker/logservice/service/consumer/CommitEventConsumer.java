@@ -1,4 +1,4 @@
-package com.devtracker.logservice.service.impl;
+package com.devtracker.logservice.service.consumer;
 
 import com.devtracker.common.constant.RabbitMQConstants;
 import com.devtracker.common.event.CommitCreatedEvent;
@@ -37,7 +37,6 @@ public class CommitEventConsumer {
         ServiceResponse<LogDto> response = service.create(getCreateModel(event));
         log.info("Log has been created. Id: {}", response.getData().getId());
     }
-
 
     // build models
     private LogDto getCreateModel(CommitCreatedEvent event) {

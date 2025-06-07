@@ -6,11 +6,12 @@ import lombok.Data;
 
 import java.time.LocalDate;
 import java.util.Set;
+import java.util.UUID;
 
 @Data
 public class GoalDto extends BaseDto {
 
-    private Long userId;
+    private UUID userId;
     private String description;
     private int targetCount;
     private String period;

@@ -1,10 +1,9 @@
-package com.devtracker.goalservice.service.impl;
+package com.devtracker.goalservice.service.consumer;
 
 import com.devtracker.common.constant.RabbitMQConstants;
 import com.devtracker.common.event.GoalProgressEvaluationEvent;
 import com.devtracker.common.util.ServiceResponse;
 import com.devtracker.goalservice.dto.GoalProgressDto;
-import com.devtracker.goalservice.entity.GoalProgress;
 import com.devtracker.goalservice.service.GoalProgressService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;

@@ -2,14 +2,16 @@ package com.devtracker.insightservice.service.impl;
 
 import com.devtracker.common.constant.RabbitMQConstants;
 import com.devtracker.common.event.AnalyzeCreatedEvent;
+import com.devtracker.insightservice.service.EventPublisher;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EventPublisher {
+public class EventPublisherImpl implements EventPublisher {
     private final RabbitTemplate rabbitTemplate;
 
-    public EventPublisher(RabbitTemplate rabbitTemplate) {
+
+    public EventPublisherImpl(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
