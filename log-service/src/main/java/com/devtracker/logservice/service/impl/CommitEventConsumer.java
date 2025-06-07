@@ -17,7 +17,11 @@ import java.util.UUID;
 
 @Slf4j
 @Component
-@RabbitListener(queues = RabbitMQConstants.COMMIT_QUEUE)
+@RabbitListener(
+        queues = RabbitMQConstants.COMMIT_QUEUE,
+        errorHandler = "globalErrorHandler",
+        containerFactory = "rabbitListenerContainerFactory"
+)
 public class CommitEventConsumer {
     private final LogService service;
 

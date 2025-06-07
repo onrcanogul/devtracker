@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eba00254-c623-4d0f-b2ae-9ba1e7f88007" name="Changes" comment="Create Commit event was handled">
+    <list default="true" id="eba00254-c623-4d0f-b2ae-9ba1e7f88007" name="Changes" comment="Log Created Event was published and consumed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/constant/RabbitMQConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/constant/RabbitMQConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/model/dto/BaseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/model/dto/BaseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/configuration/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/configuration/RabbitMQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/configuration/RabbitPublisherConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/devtracker/common/configuration/RabbitPublisherConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/InsightService.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/InsightService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/impl/InsightServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/impl/InsightServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/impl/LogEventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/java/com/devtracker/insightservice/service/impl/LogEventConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insight-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/insight-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/configuration/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/configuration/RabbitMQConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/LogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/LogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/LogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/CommitEventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice/service/impl/CommitEventConsumer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,51 +61,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.GithubServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.GoalServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.InsightServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.LogServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.TrackingServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/onurcanogul/Desktop/devtracker/log-service/src/main/java/com/devtracker/logservice&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.GithubServiceApplication.executor": "Run",
+    "Spring Boot.GoalServiceApplication.executor": "Run",
+    "Spring Boot.InsightServiceApplication.executor": "Run",
+    "Spring Boot.LogServiceApplication.executor": "Debug",
+    "Spring Boot.TrackingServiceApplication.executor": "Run",
+    "Spring Boot.UserServiceApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "openjdk-21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/onurcanogul/Desktop/devtracker/common/src/main/java/com/devtracker/common",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.devtracker.apigateway" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/common/src/main/java/com/devtracker/common" />
       <recent name="$PROJECT_DIR$/log-service/src/main/java/com/devtracker/logservice" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.devtracker.insightservice.service.impl" />
       <recent name="com.devtracker.githubservice.controller" />
       <recent name="com.devtracker.githubservice.service.impl" />
       <recent name="com.devtracker.goalservice.controller" />
       <recent name="com.devtracker.trackingservice.controller" />
-      <recent name="com.devtracker.common.exception" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -207,7 +211,8 @@
       <workItem from="1749204048635" duration="4908000" />
       <workItem from="1749223645230" duration="5292000" />
       <workItem from="1749230857501" duration="715000" />
-      <workItem from="1749247657008" duration="1269000" />
+      <workItem from="1749247657008" duration="1776000" />
+      <workItem from="1749283443185" duration="1833000" />
     </task>
     <task id="LOCAL-00001" summary="eureka service was implemented">
       <option name="closed" value="true" />
@@ -297,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749228786490</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Log Created Event was published and consumed">
+      <option name="closed" value="true" />
+      <created>1749249254681</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1749249254681</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +327,7 @@
     <MESSAGE value="insight service was implemented" />
     <MESSAGE value="github sync service was implemented" />
     <MESSAGE value="Create Commit event was handled" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Commit event was handled" />
+    <MESSAGE value="Log Created Event was published and consumed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Log Created Event was published and consumed" />
   </component>
 </project>

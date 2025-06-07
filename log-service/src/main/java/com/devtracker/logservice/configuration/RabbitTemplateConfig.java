@@ -1,6 +1,6 @@
 package com.devtracker.logservice.configuration;
 
-import com.devtracker.common.configuration.RabbitPublisherConfigurer;
+import com.devtracker.common.configuration.RabbitConfigurer;
 import com.devtracker.logservice.messaging.MetadataHeaderProcessor;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +16,6 @@ public class RabbitTemplateConfig {
 
     @PostConstruct
     public void setupTemplate() {
-        RabbitPublisherConfigurer.configure(rabbitTemplate, metadataHeaderProcessor);
+        RabbitConfigurer.configure(rabbitTemplate, metadataHeaderProcessor);
     }
 }

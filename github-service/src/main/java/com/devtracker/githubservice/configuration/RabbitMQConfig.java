@@ -1,10 +1,8 @@
 package com.devtracker.githubservice.configuration;
 
+import com.devtracker.common.configuration.RabbitConfigurer;
 import com.devtracker.common.constant.RabbitMQConstants;
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
+import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.config.RetryInterceptorBuilder;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -24,16 +22,8 @@ public class RabbitMQConfig {
         return new Jackson2JsonMessageConverter();
     }
     @Bean
-    public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory(ConnectionFactory connectionFactory) {
-        SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
-        factory.setConnectionFactory(connectionFactory);
-        factory.setAcknowledgeMode(org.springframework.amqp.core.AcknowledgeMode.MANUAL);
-        factory.setMessageConverter(new Jackson2JsonMessageConverter());
-        factory.setAdviceChain(RetryInterceptorBuilder.stateless()
-                .maxAttempts(3)
-                .recoverer(new RejectAndDontRequeueRecoverer())
-                .build());
-        return factory;
+    public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory(ConnectionFactory factory) {
+        return RabbitConfigurer.rabbitListenerContainerFactory(factory, AcknowledgeMode.MANUAL, 3);
     }
     @Bean
     public TopicExchange commitExchange() {

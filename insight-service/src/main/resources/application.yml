@@ -43,3 +43,8 @@ jwt:
 
 server:
   port: 8085
+
+
+ai:
+  service:
+    url: "http://localhost:3000/api/analyze"

@@ -24,4 +24,5 @@ public class RabbitMQConfig {
                 .to(dlqExchange())
                 .with(RabbitMQConstants.DLQ_ROUTING_KEY);
     }
+
 }
