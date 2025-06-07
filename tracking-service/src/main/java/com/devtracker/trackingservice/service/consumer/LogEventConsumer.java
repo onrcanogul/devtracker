@@ -1,4 +1,4 @@
-package com.devtracker.trackingservice.service.impl;
+package com.devtracker.trackingservice.service.consumer;
 
 import com.devtracker.common.constant.RabbitMQConstants;
 import com.devtracker.common.event.LogCreatedEvent;
