@@ -2,6 +2,9 @@
 
 This project is a hands-on implementation of an **event-driven system** using **Spring Boot**, **RabbitMQ**, and **Docker**. It was built with the goal of mastering asynchronous communication between microservices and understanding robust messaging patterns in distributed systems.
 
+Auth - In Progress
+Monitoring - In Progress
+
 ---
 
 ## Purpose
